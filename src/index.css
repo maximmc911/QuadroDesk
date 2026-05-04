@@ -1,3 +1,4 @@
+
 *{
   margin: 0;
   padding: 0;
@@ -5,3 +6,118 @@
 
 }
 @import "tailwindcss";
+
+:root{
+    /* Главный фон всей системы      */
+  --background_color:  #F8FAFC;
+    /* Sidebar, боковые панели, навигация  */
+  --secondary_bg-color: #FFFFFF;
+  /* Карточки, блоки, основные контейнеры   */
+  --sufrace-color: #F1F5F9;
+  /* Модальные окна, popup, dropdown    */
+  --raised-sufrace-color : #FFFFFF;
+  /*  Наведение курсора   */
+  --hover-status:   #E2E8F0;
+  /* Выбранные элементы  */
+  --active-state: #CBD5E1;
+  /* Главный фирменный цвет */
+  --main-focus-color: #4F46E5;
+  /* Наведение на primary-кнопки  */
+  --hover-main-focus: #4338CA;
+  /*  Дополнительные выделения */
+  --secondary-emphasis: #7C3AED;
+/*  Аналитика, графики, инфо-блоки    */
+--info-emphasis: #0891B2;
+/* Выполнено, завершено, streak  */
+--susses: #059669;
+/* Дедлайны, важные напоминания  */
+--warning: #D97706;
+/*  Просрочено, удалить, ошибка */
+--error: #DC2626;
+/* Главный текст интерфейса  */
+--main-text: #0F172A;
+/* Подписи, описания, дополнительная инфa  */
+--secondary-text: #475569;
+/* Мета-информация, placeholder   */
+--muted-text: #64748B;
+/* Основные border-элементы  */
+--main-border-color: #CBD5E1;
+/* Лёгкие, почти незаметные границы */
+--secondary-border-color: #E2E8F0;
+/* Линии между блоками  */
+--separator-color: #E5E7EB;
+/* Input, textarea, формы  Фон поля ввода  */
+--inputField-bg: #FFFFFF;
+/*  Border input */
+--border-input-color: #CBD5E1;
+/*  Подсветка активного input  */
+--focus-status-color: #4F46E5;
+/*  Неактивные элементы */
+--disable-state-color: #CBD5E1;
+/* Скелетон загрузки  */
+--sceleton-loading-color: #E2E8F0;
+/*  Затемнение фона под modal   */
+--darcening-owerlay-color: rgba(15,23,42,0.35);
+
+
+
+}
+.dark-theme{
+    /* Главный фон всей системы      */
+  --background_color:  #0B0F14;
+    /* Sidebar, боковые панели, навигация  */
+  --secondary_bg-color: #111827;
+  /* Карточки, блоки, основные контейнеры   */
+  --sufrace-color:  #1F2937;
+  /* Модальные окна, popup, dropdown    */
+  --raised-sufrace-color : #273449 ;
+  /*  Наведение курсора   */
+  --hover-status:  #2D3A50   ;
+  /* Выбранные элементы  */
+  --active-state:  #374151;
+  /* Главный фирменный цвет */
+  --main-focus-color: #6366F1;
+  /* Наведение на primary-кнопки  */
+  --hover-main-focus: #4F46E5 ;
+  /*  Дополнительные выделения */
+  --secondary-emphasis: #8B5CF6 ;
+/*  Аналитика, графики, инфо-блоки    */
+--info-emphasis: #06B6D4 ;
+/* Выполнено, завершено, streak  */
+--susses: #10B981;
+/* Дедлайны, важные напоминания  */
+--warning: #F59E0B ;
+/*  Просрочено, удалить, ошибка */
+--error: #EF4444 ;
+/* Главный текст интерфейса  */
+--main-text: #F9FAFB;
+/* Подписи, описания, дополнительная инфa  */
+--secondary-text: #9CA3AF ;
+/* Мета-информация, placeholder   */
+--muted-text: #6B7280 ;
+/* Основные border-элементы  */
+--main-border-color: #374151 ;
+/* Лёгкие, почти незаметные границы */
+--secondary-border-color: #2A3441 ;
+/* Линии между блоками  */
+--separator-color: #1E293B ;
+/* Input, textarea, формы  Фон поля ввода  */
+--inputField-bg: #111827 ;
+/*  Border input */
+--border-input-color: #374151 ;
+/*  Подсветка активного input  */
+--focus-status-color: #6366F1;
+/*  Неактивные элементы */
+--disable-state-color: #4B5563 ;
+/* Скелетон загрузки  */
+--sceleton-loading-color: #1E293B ;
+/*  Затемнение фона под modal   */
+--darcening-owerlay-color: rgba(0,0,0,0.65);
+
+
+
+}
+
+#root{
+  background-color: var(--background_color);
+}
