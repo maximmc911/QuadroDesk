@@ -16,9 +16,12 @@ const Container = ({props}: {props:props}) => {
           <Navbar/>
 
 {props.mainInfo}
-            <div className="w-full " >
+         
+                <footer className="flex w-full  justify-between items-center p-2 radius-modalWindow bg-secondary-bg text-main-text shadow-(--medium_shadow) rounded-t-none" >
+
                <p className=" text-center"> &#169; Copyright by Maxim Sokolov</p>
-            </div>
+                </footer>
+       
     </div>
     
     </>
