@@ -1,123 +1,160 @@
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-}
 @import "tailwindcss";
 
-:root{
-    /* Главный фон всей системы      */
-  --background_color:  #F8FAFC;
-    /* Sidebar, боковые панели, навигация  */
-  --secondary_bg-color: #FFFFFF;
-  /* Карточки, блоки, основные контейнеры   */
-  --sufrace-color: #F1F5F9;
-  /* Модальные окна, popup, dropdown    */
-  --raised-sufrace-color : #FFFFFF;
-  /*  Наведение курсора   */
-  --hover-status:   #E2E8F0;
-  /* Выбранные элементы  */
-  --active-state: #CBD5E1;
-  /* Главный фирменный цвет */
-  --main-focus-color: #4F46E5;
-  /* Наведение на primary-кнопки  */
-  --hover-main-focus: #4338CA;
-  /*  Дополнительные выделения */
-  --secondary-emphasis: #7C3AED;
-/*  Аналитика, графики, инфо-блоки    */
---info-emphasis: #0891B2;
-/* Выполнено, завершено, streak  */
---susses: #059669;
-/* Дедлайны, важные напоминания  */
---warning: #D97706;
-/*  Просрочено, удалить, ошибка */
---error: #DC2626;
-/* Главный текст интерфейса  */
---main-text: #0F172A;
-/* Подписи, описания, дополнительная инфa  */
---secondary-text: #475569;
-/* Мета-информация, placeholder   */
---muted-text: #64748B;
-/* Основные border-элементы  */
---main-border-color: #CBD5E1;
-/* Лёгкие, почти незаметные границы */
---secondary-border-color: #E2E8F0;
-/* Линии между блоками  */
---separator-color: #E5E7EB;
-/* Input, textarea, формы  Фон поля ввода  */
---inputField-bg: #FFFFFF;
-/*  Border input */
---border-input-color: #CBD5E1;
-/*  Подсветка активного input  */
---focus-status-color: #4F46E5;
-/*  Неактивные элементы */
---disable-state-color: #CBD5E1;
-/* Скелетон загрузки  */
---sceleton-loading-color: #E2E8F0;
-/*  Затемнение фона под modal   */
---darcening-owerlay-color: rgba(15,23,42,0.35);
-
-
-
+/* 
+  1. Сброс стилей (лучше делать после импорта Tailwind, 
+  либо использовать встроенный Tailwind Preflight, который уже сбрасывает отступы)
+*/
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
-.dark-theme{
-    /* Главный фон всей системы      */
-  --background_color:  #0B0F14;
-    /* Sidebar, боковые панели, навигация  */
-  --secondary_bg-color: #111827;
-  /* Карточки, блоки, основные контейнеры   */
-  --sufrace-color:  #1F2937;
-  /* Модальные окна, popup, dropdown    */
-  --raised-sufrace-color : #273449 ;
-  /*  Наведение курсора   */
-  --hover-status:  #2D3A50   ;
-  /* Выбранные элементы  */
-  --active-state:  #374151;
+/*
+  2. Регистрация переменных в Tailwind v4.
+  Благодаря этому вы сможете использовать классы вроде `bg-background`, `text-main` и т.д.
+  ВАЖНО: В Tailwind v4 переменные для теней задаются через @theme, 
+  но сложные тени лучше оставить в :root, если вы используете их через var().
+*/
+@theme {
+  /* Главный фон всей системы */
+  --color-background: #F8FAFC;
+  /* Sidebar, боковые панели, навигация */
+  --color-secondary-bg: #FFFFFF;
+  /* Карточки, блоки, основные контейнеры */
+  --color-surface: #F1F5F9;
+  /* Модальные окна, popup, dropdown */
+  --color-raised-surface: #FFFFFF;
+  /* Наведение курсора */
+  --color-hover-status: #E2E8F0;
+  /* Выбранные элементы */
+  --color-active-state: #CBD5E1;
   /* Главный фирменный цвет */
-  --main-focus-color: #6366F1;
-  /* Наведение на primary-кнопки  */
-  --hover-main-focus: #4F46E5 ;
-  /*  Дополнительные выделения */
-  --secondary-emphasis: #8B5CF6 ;
-/*  Аналитика, графики, инфо-блоки    */
---info-emphasis: #06B6D4 ;
-/* Выполнено, завершено, streak  */
---susses: #10B981;
-/* Дедлайны, важные напоминания  */
---warning: #F59E0B ;
-/*  Просрочено, удалить, ошибка */
---error: #EF4444 ;
-/* Главный текст интерфейса  */
---main-text: #F9FAFB;
-/* Подписи, описания, дополнительная инфa  */
---secondary-text: #9CA3AF ;
-/* Мета-информация, placeholder   */
---muted-text: #6B7280 ;
-/* Основные border-элементы  */
---main-border-color: #374151 ;
-/* Лёгкие, почти незаметные границы */
---secondary-border-color: #2A3441 ;
-/* Линии между блоками  */
---separator-color: #1E293B ;
-/* Input, textarea, формы  Фон поля ввода  */
---inputField-bg: #111827 ;
-/*  Border input */
---border-input-color: #374151 ;
-/*  Подсветка активного input  */
---focus-status-color: #6366F1;
-/*  Неактивные элементы */
---disable-state-color: #4B5563 ;
-/* Скелетон загрузки  */
---sceleton-loading-color: #1E293B ;
-/*  Затемнение фона под modal   */
---darcening-owerlay-color: rgba(0,0,0,0.65);
-
-
-
+  --color-main-focus: #4F46E5;
+  /* Наведение на primary-кнопки */
+  --color-hover-main-focus: #4338CA;
+  /* Дополнительные выделения */
+  --color-secondary-emphasis: #7C3AED;
+  /* Аналитика, графики, инфо-блоки */
+  --color-info-emphasis: #0891B2;
+  /* Выполнено, завершено, streak */
+  --color-success: #059669;
+  /* Дедлайны, важные напоминания */
+  --color-warning: #D97706;
+  /* Просрочено, удалить, ошибка */
+  --color-error: #DC2626;
+  /* Главный текст интерфейса */
+  --color-main-text: #0F172A;
+  /* Подписи, описания, дополнительная инфа */
+  --color-secondary-text: #475569;
+  /* Мета-информация, placeholder */
+  --color-muted-text: #64748B;
+  /* Основные border-элементы */
+  --color-main-border: #CBD5E1;
+  /* Лёгкие, почти незаметные границы */
+  --color-secondary-border: #E2E8F0;
+  /* Линии между блоками */
+  --color-separator: #E5E7EB;
+  /* Input, textarea, формы: Фон поля ввода */
+  --color-input-bg: #FFFFFF;
+  /* Border input */
+  --color-border-input: #CBD5E1;
+  /* Подсветка активного input */
+  --color-focus-status: #4F46E5;
+  /* Неактивные элементы */
+  --color-disable-state: #CBD5E1;
+  /* Скелетон загрузки */
+  --color-skeleton-loading: #E2E8F0;
+  /* Затемнение фона под modal */
+  --color-overlay-darkening: rgba(15, 23, 42, 0.35);
 }
 
-#root{
-  background-color: var(--background_color);
+/* 
+  3. Тени и Темная тема.
+  В Tailwind v4 переменные, зависящие от темы (dark mode), лучше хранить в :root и .dark-theme.
+*/
+:root {
+  --small_shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --medium_shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --big_shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+  --backlight_shadow: 0 0 16px rgba(79, 70, 229, 0.15);
+  --premium_shadow: 0 0 32px rgba(124, 58, 237, 0.12);
+}
+
+.dark-theme {
+  /* Переопределяем цвета */
+  --color-background: #0B0F14;
+  --color-secondary-bg: #111827;
+  --color-surface: #1F2937;
+  --color-raised-surface: #273449;
+  --color-hover-status: #2D3A50;
+  --color-active-state: #374151;
+  --color-main-focus: #6366F1;
+  --color-hover-main-focus: #4F46E5;
+  --color-secondary-emphasis: #8B5CF6;
+  --color-info-emphasis: #06B6D4;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-main-text: #F9FAFB;
+  --color-secondary-text: #9CA3AF;
+  --color-muted-text: #6B7280;
+  --color-main-border: #374151;
+  --color-secondary-border: #2A3441;
+  --color-separator: #1E293B;
+  --color-input-bg: #111827;
+  --color-border-input: #374151;
+  --color-focus-status: #6366F1;
+  --color-disable-state: #4B5563;
+  --color-skeleton-loading: #1E293B;
+  --color-overlay-darkening: rgba(0, 0, 0, 0.65);
+
+  /* Переопределяем тени */
+  --small_shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --medium_shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --big_shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --backlight_shadow: 0 0 20px rgba(99, 102, 241, 0.25);
+  --premium_shadow: 0 0 40px rgba(139, 92, 246, 0.18);
+}
+
+/* 
+  4. Базовые стили для текста.
+  Используем новые переменные.
+*/
+body {
+  background-color: var(--color-background);
+  color: var(--color-main-text);
+}
+
+p, span, li, a {
+  color: var(--color-secondary-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-main-text);
+}
+
+/* 
+  5. Кастомные утилиты для скруглений.
+  В Tailwind v4 кастомные классы регистрируются через @utility, 
+  чтобы они могли комбинироваться с другими классами (например, hover:radius-card).
+*/
+@utility radius-small {
+  border-radius: 8px;
+}
+@utility radius-standart {
+  border-radius: 12px;
+}
+@utility radius-card {
+  border-radius: 16px;
+}
+@utility radius-modalWindow {
+  border-radius: 20px;
+}
+@utility radius-premiumBlock {
+  border-radius: 24px;
+}
+@utility radius-full {
+  border-radius: 999px;
 }

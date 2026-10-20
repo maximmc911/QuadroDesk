@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <title>QuadroDesk — 3D icon</title>
+  <desc>Isolated four-tile QuadroDesk mark based on the login mockup, with rounded blue-violet faces, beveled depth and glossy highlights. Transparent background.</desc>
+  <defs>
+    <linearGradient id="faceTL" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#8797FF"/><stop offset=".45" stop-color="#6675F5"/><stop offset="1" stop-color="#4A46D9"/>
+    </linearGradient>
+    <linearGradient id="faceTR" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#B5B9FF"/><stop offset=".48" stop-color="#8A8BF7"/><stop offset="1" stop-color="#6254E6"/>
+    </linearGradient>
+    <linearGradient id="faceBL" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#747CF8"/><stop offset=".48" stop-color="#5D63E9"/><stop offset="1" stop-color="#403DC4"/>
+    </linearGradient>
+    <linearGradient id="faceBR" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#999AFF"/><stop offset=".46" stop-color="#7773EF"/><stop offset="1" stop-color="#4D43D2"/>
+    </linearGradient>
+    <linearGradient id="depth" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#5852D9"/><stop offset=".55" stop-color="#3930A7"/><stop offset="1" stop-color="#21185F"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2=".9" y2="1">
+      <stop stop-color="#FFFFFF" stop-opacity=".58"/><stop offset=".52" stop-color="#FFFFFF" stop-opacity=".12"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="-18%" y="-18%" width="145%" height="155%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="7" result="blur"/>
+      <feOffset dx="4" dy="9" result="offset"/>
+      <feColorMatrix in="offset" type="matrix" values="0 0 0 0 .035  0 0 0 0 .025  0 0 0 0 .2  0 0 0 .48 0" result="shade"/>
+      <feMerge><feMergeNode in="shade"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="clip">
+      <rect width="210" height="210" rx="51"/>
+    </clipPath>
+    <path id="shine" d="M0 53Q0 0 53 0H179Q121 25 75 83Q39 126 0 151Z" fill="url(#gloss)"/>
+    <path id="topRim" d="M4 54Q4 4 54 4H166" stroke="#FFFFFF" stroke-opacity=".53" stroke-width="4" stroke-linecap="round"/>
+    <path id="leftRim" d="M7 132V58Q7 8 58 8" stroke="#D7F2FF" stroke-opacity=".26" stroke-width="3" stroke-linecap="round"/>
+    <path id="bottomBevel" d="M25 201H157Q201 201 201 157" stroke="#211C79" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <!-- upper-left tile -->
+    <g transform="translate(40 40)">
+      <rect x="7" y="9" width="210" height="210" rx="52" fill="url(#depth)"/>
+      <rect width="210" height="210" rx="51" fill="url(#faceTL)"/>
+      <g clip-path="url(#clip)"><use href="#shine"/><use href="#topRim"/><use href="#leftRim"/></g>
+      <use href="#bottomBevel"/>
+    </g>
+    <!-- upper-right tile -->
+    <g transform="translate(264 40)">
+      <rect x="7" y="9" width="210" height="210" rx="52" fill="url(#depth)"/>
+      <rect width="210" height="210" rx="51" fill="url(#faceTR)"/>
+      <g clip-path="url(#clip)"><use href="#shine"/><use href="#topRim"/><use href="#leftRim"/></g>
+      <use href="#bottomBevel"/>
+    </g>
+    <!-- lower-left tile -->
+    <g transform="translate(40 264)">
+      <rect x="7" y="9" width="210" height="210" rx="52" fill="url(#depth)"/>
+      <rect width="210" height="210" rx="51" fill="url(#faceBL)"/>
+      <g clip-path="url(#clip)"><use href="#shine"/><use href="#topRim"/><use href="#leftRim"/></g>
+      <use href="#bottomBevel"/>
+    </g>
+    <!-- lower-right tile -->
+    <g transform="translate(264 264)">
+      <rect x="7" y="9" width="210" height="210" rx="52" fill="url(#depth)"/>
+      <rect width="210" height="210" rx="51" fill="url(#faceBR)"/>
+      <g clip-path="url(#clip)"><use href="#shine"/><use href="#topRim"/><use href="#leftRim"/></g>
+      <use href="#bottomBevel"/>
+    </g>
+  </g>
+</svg>
