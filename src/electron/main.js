@@ -13,15 +13,42 @@ function createWindow() {
   );
   // Menu.setApplicationMenu(null)
   // win.setFullScreen(true)
-  win.loadURL("http://localhost:5173");
+  if(app.isPackaged){
+    win.loadFile(path.join(app.getAppPath(), 'dist' , 'index.html'))
+  }else{
+
+    win.loadURL("http://localhost:5173");
+  }
   //  win.loadFile("dist/index.html");
+   // Поможет найти ошибки загрузки в DevTools
+  win.webContents.on(
+    'did-fail-load',
+    (_event, errorCode, errorDescription, validatedURL) => {
+      console.error(
+        'Ошибка загрузки:',
+        errorCode,
+        errorDescription,
+        validatedURL
+      )
+    }
+  )
 }
 
 app.whenReady().then(() => {
   Menu.setApplicationMenu(null)
   createWindow()
 })
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
 
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow()
+  }
+})
 /* 
 const { app, BrowserWindow } = require("electron")
 const path = require("path")

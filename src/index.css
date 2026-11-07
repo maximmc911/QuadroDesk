@@ -158,3 +158,24 @@ h1, h2, h3, h4, h5, h6 {
 @utility radius-full {
   border-radius: 999px;
 }
+/*
+ 6. Утилиты теней.
+  Регистрируем через @utility, чтобы работали с вариантами: 
+  hover:shadow-medium, focus:shadow-backlight и т.д.
+  Значения берём из :root / .dark-theme (переопределяются в тёмной теме).
+*/
+@utility shadow-small {
+  box-shadow: var(--small_shadow);
+}
+@utility shadow-medium {
+  box-shadow: var(--medium_shadow);
+}
+@utility shadow-big {
+  box-shadow: var(--big_shadow);
+}
+@utility shadow-backlight {
+  box-shadow: var(--backlight_shadow);
+}
+@utility shadow-premium {
+  box-shadow: var(--premium_shadow);
+}
